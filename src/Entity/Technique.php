@@ -43,9 +43,6 @@ class Technique
         return $this;
     }
 
-    /**
-     * @return Collection<int, Work>
-     */
     public function getWorks(): Collection
     {
         return $this->works;

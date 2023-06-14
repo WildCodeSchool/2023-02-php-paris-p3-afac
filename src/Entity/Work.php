@@ -18,7 +18,7 @@ class Work
     private ?string $name = null;
 
     #[ORM\Column(length: 100)]
-    private ?string $publicationDate = null;
+    private ?string $publishedAt = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
@@ -57,14 +57,14 @@ class Work
         return $this;
     }
 
-    public function getPublicationDate(): ?string
+    public function getpublishedAt(): ?string
     {
-        return $this->publicationDate;
+        return $this->publishedAt;
     }
 
-    public function setPublicationDate(string $publicationDate): self
+    public function setpublishedAt(string $publishedAt): self
     {
-        $this->publicationDate = $publicationDate;
+        $this->publishedAt = $publishedAt;
 
         return $this;
     }

@@ -24,10 +24,10 @@ class Artist
     private ?string $biography = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $birthDate = null;
+    private ?string $bornAt = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $deathDate = null;
+    private ?string $deadAt = null;
 
     public function getId(): ?int
     {
@@ -70,26 +70,26 @@ class Artist
         return $this;
     }
 
-    public function getDateOfBirth(): ?string
+    public function getBornAT(): ?string
     {
-        return $this->birthDate;
+        return $this->bornAt;
     }
 
-    public function setDateOfBirth(string $birthDate): self
+    public function setBornAt(string $bornAt): self
     {
-        $this->birthDate = $birthDate;
+        $this->bornAt = $bornAt;
 
         return $this;
     }
 
-    public function getDateOfDeath(): ?string
+    public function getDeadAt(): ?string
     {
-        return $this->deathDate;
+        return $this->deadAt;
     }
 
-    public function setDateOfDeath(string $deathDate): self
+    public function setDeadAt(string $deadAt): self
     {
-        $this->deathDate = $deathDate;
+        $this->deadAt = $deadAt;
 
         return $this;
     }
