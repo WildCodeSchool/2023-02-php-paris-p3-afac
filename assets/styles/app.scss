@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap');
 
-$primary: blue;
+$primary:black;
+
+body {
+    font-family: 'Gothic A1', sans-serif;
+    color: red;
+}
 
 
 @import "~bootstrap/scss/bootstrap";
