@@ -2,8 +2,11 @@
 
 $primaryTextColor:black;
 
+@import "~bootswatch/dist/spacelab/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/spacelab/bootswatch";
+
 body {
     font-family: 'Gothic A1', sans-serif;
 }
 
-@import "~bootstrap/scss/bootstrap";
