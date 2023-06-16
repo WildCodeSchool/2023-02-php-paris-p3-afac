@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap');
 
-$primaryTextColor:black;
+$primaryTextColor: black;
 
 @import "~bootswatch/dist/spacelab/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/spacelab/bootswatch";
 
-body {
+* {
     font-family: 'Gothic A1', sans-serif;
+    color: $primaryTextColor;
 }
 
+// body {
+//     background-image: url("/..build/images/background.82b3bc33.jpg");
+// }
+
+.nav-link {
+    color: $primaryTextColor;
+    font-size: 24px;
+}
