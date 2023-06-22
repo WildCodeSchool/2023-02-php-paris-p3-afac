@@ -1,0 +1,75 @@
+Davantage de vigilance sur les reviews (un fichier est-il modifié pour une raison justifiée ?)
+
+
+
+
+
+Page 1 mobile :
+
+Image de fond d'accueil
+
+Evènement (1 seul) : en cours ou à venir
+
+Coup de coeur : oeuvre la plus favorisée par les users
+
+Footer : ne pas développer les mentions légales
+
+
+
+Page 2 idem :
+
+Menu : remonter éléments vers le haut
+
+Mettre le contenu du haut sur la page 1
+
+
+
+Page 4 :
+
+Définir une taille de base pour les images
+
+remplacer le + par un oeil ou une loupe
+
+
+
+Page 5 :
+
+Agrandir le titre
+
+Définir les différentes plages de contenu
+
+
+
+Page 6 :
+
+Page de connexion : l'alimenter davantage, rajouter un bouton
+
+A voir si on fait une page de connexion admin à la place
+
+
+
+Page 1 tablette :
+
+Menu navbar : espacement égal entre tous 
+
+Laisser le logo et enlever le menu burger
+
+Occuper l'espace car tout est écrit en tout petit
+
+
+
+Page 2 " :
+
+Indiquer "Galerie" en haut
+
+Le titre au moins, voir si on ajoute la date ?
+
+
+
+PR :
+
+Entités
+
+Fixtures
+
+Variables CSS : polices et couleurs

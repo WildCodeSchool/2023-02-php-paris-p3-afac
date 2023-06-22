@@ -11,11 +11,35 @@ $primaryTextColor: black;
     color: $primaryTextColor;
 }
 
-// body {
-//     background-image: url("/..build/images/background.82b3bc33.jpg");
-// }
-
 .nav-link {
     color: $primaryTextColor;
     font-size: 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: none;
+}
+
+.copyrights {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+
+.copyrights p {
+    margin-top: none;
+    margin-bottom: none;
+}
+
+.social_media {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.space {
+    margin: 20px;
 }
