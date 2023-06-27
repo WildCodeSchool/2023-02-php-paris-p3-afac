@@ -9,16 +9,28 @@ $primaryTextColor: black;
 * {
     font-family: 'Gothic A1', sans-serif;
     color: $primaryTextColor;
+    // background-color: black;
 }
 
 .nav-link {
     color: $primaryTextColor;
-    font-size: 24px;
+    font-size: 16px;
+}
+
+.form-control {
+    color: $primaryTextColor;
+    font-size: 12px;
+}
+
+.login_logo {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: none;
 }
 
@@ -26,20 +38,48 @@ $primaryTextColor: black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 5px;
 }
 
 .copyrights p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: none;
     margin-bottom: none;
 }
 
 .social_media {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legal {
+    display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 .space {
-    margin: 20px;
+    margin: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .login_logo {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .container-fluid .d-flex {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .space {
+        font-size: 12px;
+    }
+
+    .items {
+        width: 30px;
+    }
 }
