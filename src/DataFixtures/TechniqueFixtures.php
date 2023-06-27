@@ -17,8 +17,8 @@ class TechniqueFixtures extends Fixture
         foreach (self::TECHNIQUE as $techniqueName) {
             $technique = new Technique();
             $technique->setName($techniqueName);
-            $this->addReference('technique_' . $techniqueName, $technique);
             $manager->persist($technique);
+            $this->addReference('technique_' . $techniqueName, $technique);
         }
         $manager->flush();
     }

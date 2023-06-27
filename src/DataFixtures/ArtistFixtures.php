@@ -28,7 +28,6 @@ class ArtistFixtures extends Fixture
             $artist->setBiography($value['biography']);
             $artist->setBornAt($value['bornAt']);
             $artist->setDeadAt($value['deadAt']);
-          
             $manager->persist($artist);
             $this->addReference('artist_' . $value['firstname'], $artist);
         }

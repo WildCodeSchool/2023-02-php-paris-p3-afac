@@ -55,7 +55,7 @@ class User implements PasswordAuthenticatedUserInterface
 
     public function getUserIdentifier(): string
     {
-        return (string) $this->email; 
+        return (string) $this->email;
     }
 
     public function getPassword(): string

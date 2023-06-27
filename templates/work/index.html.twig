@@ -1,40 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Work index
+{% block title %}Work
 {% endblock %}
 
 {% block body %}
-	<h1>Work index</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>PublishedAt</th>
-				<th>Description</th>
-				<th>Reference</th>
-				<th>Format</th>
-				<th>Picture</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for work in works %}
-				<tr>
-					<td>{{ work.picture }}</td>
-					<td>
-						<a href="{{ path('app_work_show', {'id': work.id}) }}">show</a>
-						<a href="{{ path('app_work_edit', {'id': work.id}) }}">edit</a>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="8">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+	<h1>Toutes les Oeuvres</h1>
 
-	<a href="{{ path('app_work_new') }}">Create new</a>
-{% endblock %}
+	<div class="button">
+		<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: 'dessin'}) }}">Dessin</button><a/>
+		<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: 'aquarelle'}) }}">Aquarelle</button><a/>
+	</div>
+
+	<div class="row">
+		{% for work in works %}
+			<div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-4">
+				<figure class="square">
+					<img src="../build/images/{{ work.picture }}" class="img-thumbnail grayscale work-pictures">
+					<figcaption>{{ work.name }}</figcaption>
+					<a href="" target="blank"><img src="../build/images/eye.625866c0.png" alt="eye-icon" class="" height="30"></a>
+				</figure>
+			</div>
+
+		{% endfor %}
+	</div>
+
+	<p>Images non libres de droits</p>
+{% endblock body %}
