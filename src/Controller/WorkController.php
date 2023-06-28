@@ -19,8 +19,7 @@ class WorkController extends AbstractController
     ): Response {
         if (empty($techniqueName)) {
             $works = $workRepository->findAll();
-        } 
-        else {
+        } else {
             $technique = $techniqueRepository->findOneByName($techniqueName);
             $works = $workRepository->findByTechnique($technique);
         }
