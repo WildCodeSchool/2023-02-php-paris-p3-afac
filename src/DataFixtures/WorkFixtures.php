@@ -327,7 +327,7 @@ class WorkFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies()
     {
         return [
-        TechniqueFixtures::class,
+            TechniqueFixtures::class,
         ];
     }
 }

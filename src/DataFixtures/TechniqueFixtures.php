@@ -8,13 +8,9 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class TechniqueFixtures extends Fixture
 {
-    public const TECHNIQUE = [
-        'dessin',
-        'aquarelle',
-    ];
     public function load(ObjectManager $manager): void
     {
-        foreach (self::TECHNIQUE as $techniqueName) {
+        foreach (Technique::TECHNIQUES as $techniqueName) {
             $technique = new Technique();
             $technique->setName($techniqueName);
             $manager->persist($technique);

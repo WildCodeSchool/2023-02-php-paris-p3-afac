@@ -33,9 +33,6 @@ class User implements PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
-
-
-
     public function getId(): ?int
     {
         return $this->id;
