@@ -8,8 +8,9 @@
 	<h1>Toutes les Oeuvres</h1>
 
 	<div class="button">
-		<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: 'dessin'}) }}">Dessin</button><a/>
-		<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: 'aquarelle'}) }}">Aquarelle</button><a/>
+		{% for technique in constant('App\\Entity\\Technique::TECHNIQUES') %}
+			<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: technique }) }}">{{ technique|capitalize }}</button><a/>
+		{% endfor %}
 	</div>
 
 	<div class="row">
@@ -23,7 +24,5 @@
 			</div>
 		{% endfor %}
 	</div>
-
 	<p>Images non libres de droit</p>
-
 {% endblock body %}

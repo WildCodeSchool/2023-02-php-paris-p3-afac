@@ -22,7 +22,10 @@ class Technique
 
     private Collection $works;
 
-    CONST TECHNIQUES = ['dessins', 'aquarelles'];
+    public const TECHNIQUE_DESSIN = 'dessin';
+    public const TECHNIQUE_AQUARELLE = 'aquarelle';
+
+    public const TECHNIQUES = [self::TECHNIQUE_DESSIN, self::TECHNIQUE_AQUARELLE];
 
     public function __construct()
     {
