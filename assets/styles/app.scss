@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap');
 
 $primaryTextColor: black;
+$secondaryTextColor: #8F0627;
 
 @import "~bootswatch/dist/spacelab/variables";
 @import "~bootstrap/scss/bootstrap";
@@ -9,63 +10,66 @@ $primaryTextColor: black;
 * {
     font-family: 'Gothic A1', sans-serif;
     color: $primaryTextColor;
+    margin: 10px;
+}
+
+h5 {
+    color: $secondaryTextColor;
 }
 
 // Navbar //
 
-    .nav-link {
-        color: $primaryTextColor;
-        font-size: 16px;
-    }
+.nav-link {
+    color: $primaryTextColor;
+    font-size: 16px;
+}
 
-    .form-control {
-        color: $primaryTextColor;
-        font-size: 12px;
-    }
+.form-control {
+    color: $primaryTextColor;
+    font-size: 12px;
+}
 
-    .login_logo {
-        display: flex;
-        justify-content: flex-end;
-        margin: 10px;
-    }
+.login_logo {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
 
-    .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin-top: none;
-    }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: none;
+}
 
-    .copyrights {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
+.copyrights {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
-    .copyrights p {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-top: none;
-        margin-bottom: none;
-    }
+.copyrights p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: none;
+    margin-bottom: none;
+}
 
-    .social_media {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.social_media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .legal {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
+.legal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
-    .space {
-        margin: 10px;
-    }
-
-// Page gallery //
+.space {
+    margin: 10px;
+}
 
 @media screen and (max-width:768px) {
     .login_logo {
@@ -87,6 +91,90 @@ $primaryTextColor: black;
     }
 }
 
+
+
+// Page about //
+.afac974 {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    margin-top: none;
+    font-size: 16px;
+}
+
+.presidente {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    font-size: 16px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.hexagon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+}
+
+@media screen and (max-width: 767px) {
+
+    h5 {
+        font-size: 14px;
+    }
+
+    .afac974,
+    .presidente {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: none;
+        font-size: 10px;
+        // border: 2px solid black;
+    }
+
+    .hexagon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+    }
+
+    .text {
+        max-width: 80%;
+    }
+
+    .reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .hexagon {
+        width: 250px;
+        height: 250px;
+        align-items: center;
+    }
+
+    .afac974,
+    .presidente {
+        font-size: 12px;
+    }
+}
+
+
+
+
+// Page gallery //
+
 @media screen and (max-width: 767px) {
 
     .square {
@@ -94,11 +182,12 @@ $primaryTextColor: black;
         height: 350px;
         text-align: center;
     }
-    
+
     .work-pictures {
         max-width: 250px;
         max-height: 250px;
     }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -108,7 +197,7 @@ $primaryTextColor: black;
         height: 350px;
         text-align: center;
     }
-    
+
     .work-pictures {
         max-width: 280px;
         max-height: 280px;
@@ -136,5 +225,5 @@ $primaryTextColor: black;
     figcaption {
         text-align: center;
         font-size: 20px;
-        }
     }
+}
