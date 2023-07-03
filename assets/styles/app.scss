@@ -2,7 +2,7 @@ $carousel-control-color: black;
 $primary:black;
 $font-family-base:'Gothic A1', sans-serif;
 
-
+//  Home Page Start //
 body {
     padding: 0;
     margin: 0;
@@ -254,6 +254,7 @@ to{transform:rotatey(0.5turn)}}
     transform:rotateY(315deg) translateZ(380px)
   }
 }
+//Home Page End//
 
 @import "~bootswatch/dist/spacelab/variables";
 @import "~bootstrap/scss/bootstrap";
