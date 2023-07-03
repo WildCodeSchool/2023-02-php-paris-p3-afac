@@ -11,57 +11,61 @@ $primaryTextColor: black;
     color: $primaryTextColor;
 }
 
-.nav-link {
-    color: $primaryTextColor;
-    font-size: 16px;
-}
+// Navbar //
 
-.form-control {
-    color: $primaryTextColor;
-    font-size: 12px;
-}
+    .nav-link {
+        color: $primaryTextColor;
+        font-size: 16px;
+    }
 
-.login_logo {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-}
+    .form-control {
+        color: $primaryTextColor;
+        font-size: 12px;
+    }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: none;
-}
+    .login_logo {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px;
+    }
 
-.copyrights {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: none;
+    }
 
-.copyrights p {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: none;
-    margin-bottom: none;
-}
+    .copyrights {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
-.social_media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .copyrights p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: none;
+        margin-bottom: none;
+    }
 
-.legal {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+    .social_media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.space {
-    margin: 10px;
-}
+    .legal {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .space {
+        margin: 10px;
+    }
+
+// Page gallery //
 
 @media screen and (max-width:768px) {
     .login_logo {
@@ -82,3 +86,55 @@ $primaryTextColor: black;
         width: 30px;
     }
 }
+
+@media screen and (max-width: 767px) {
+
+    .square {
+        width: 300px;
+        height: 350px;
+        text-align: center;
+    }
+    
+    .work-pictures {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .square {
+        width: 300px;
+        height: 350px;
+        text-align: center;
+    }
+    
+    .work-pictures {
+        max-width: 280px;
+        max-height: 280px;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .square {
+        width: 370px;
+        height: 470px;
+        text-align: center;
+    }
+
+    .work-pictures {
+        max-width: 350px;
+        max-height: 350px;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: 20px;
+        }
+    }
