@@ -19,7 +19,13 @@ class Technique
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'technique', targetEntity: Work::class)]
+
     private Collection $works;
+
+    public const TECHNIQUE_DESSIN = 'dessin';
+    public const TECHNIQUE_AQUARELLE = 'aquarelle';
+
+    public const TECHNIQUES = [self::TECHNIQUE_DESSIN, self::TECHNIQUE_AQUARELLE];
 
     public function __construct()
     {
