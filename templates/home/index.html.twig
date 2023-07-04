@@ -1,23 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home
+{% block title %}AFAC 974
 {% endblock %}
 
 {% block body %}
-
 	<div class="BgPage">
-		<br><br>
-
 		<div class="contenu_carou_auto">
 			<div class="caroussel-image">
-				<img src="build/images/FRAD974_2FI34.3.febd6b25.jpg" alt>
-				<img src="build/images/FRAD974_2FI34.30.419cff3c.jpg" alt>
-				<img src="build/images/FRAD974_2FI50.6.ca6ce5e4.jpg" alt>
-				<img src="build/images/FRAD974_40FI90.11418c17.jpg" alt>
-				<img src="build/images/FRAD974_40FI91.da9cf76f.jpg" alt>
-				<img src="build/images/FRAD974_40FI92.b242d530.jpg" alt>
-				<img src="build/images/FRAD974_40FI98.1266c291.jpg" alt>
-				<img src="build/images/MORTIERdeTREVISE_caffrine1861.c2ec0a6f.jpg." alt>
+				{% for work in works %}
+					<img src="{{ asset('build/images/' ~ work.picture) }}">
+
+				{% endfor %}
 			</div>
 		</div>
 
@@ -39,6 +32,6 @@
 					<cite title="Source Title">LVEJ</cite>
 				</figcaption>
 			</figure>
-
-		</div>
-	{% endblock %}
+		</section>
+	</div>
+{% endblock %}

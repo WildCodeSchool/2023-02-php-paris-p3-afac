@@ -2,6 +2,11 @@ $carousel-control-color: black;
 $primary:black;
 $font-family-base:'Gothic A1', sans-serif;
 
+@import "~bootswatch/dist/spacelab/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/spacelab/bootswatch";
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap');
+
 //  Home Page Start //
 body {
     padding: 0;
@@ -11,9 +16,9 @@ body {
     align-items: center;
     flex-wrap: wrap;
     overflow: hidden;
+    background: url('../images/landscape.jpg');
 
   .BgPage {
-    background: url('../images/landscape.jpg');
     width: 100%;
     display: flex;
     justify-content: center;
@@ -32,22 +37,19 @@ body {
   perspective:8000px
   }
 		
-  .caroussel-image{
-    
+  .caroussel-image {
   animation:rotation 24s infinite alternate linear;	
   transform-style:preserve-3d;
   position:relative;	
   }
 
-  .caroussel-image img{
-    
+  .caroussel-image img {
   position: absolute;
   top:0;
   left: 0;
   }
       
-  .caroussel-image img{
-    
+  .caroussel-image img { 
   filter:drop-shadow(0 12px 5px hsla(0,0%,0%,.4));
   width: 300px;
   height:366px;
@@ -254,9 +256,138 @@ to{transform:rotatey(0.5turn)}}
     transform:rotateY(315deg) translateZ(380px)
   }
 }
-//Home Page End//
 
-@import "~bootswatch/dist/spacelab/variables";
-@import "~bootstrap/scss/bootstrap";
-@import "~bootswatch/dist/spacelab/bootswatch";
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap');
+$primaryTextColor: black;
+
+* {
+    font-family: 'Gothic A1', sans-serif;
+    color: $primaryTextColor;
+}
+
+// Navbar //
+   
+    .nav-link {
+        color: $primaryTextColor;
+        font-size: 16px;
+    }
+
+    .form-control {
+        color: $primaryTextColor;
+        font-size: 12px;
+    }
+
+    .login_logo {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: none;
+    }
+
+    .copyrights {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .copyrights p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: none;
+        margin-bottom: none;
+    }
+
+    .social_media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .legal {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .space {
+        margin: 10px;
+    }
+
+// Page gallery //
+
+@media screen and (max-width:768px) {
+    .login_logo {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .container-fluid .d-flex {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .space {
+        font-size: 12px;
+    }
+
+    .items {
+        width: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .square {
+        width: 300px;
+        height: 350px;
+        text-align: center;
+    }
+    
+    .work-pictures {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .square {
+        width: 300px;
+        height: 350px;
+        text-align: center;
+    }
+    
+    .work-pictures {
+        max-width: 280px;
+        max-height: 280px;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .square {
+        width: 370px;
+        height: 470px;
+        text-align: center;
+    }
+
+    .work-pictures {
+        max-width: 350px;
+        max-height: 350px;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: 20px;
+        }
+    }
