@@ -9,7 +9,7 @@
 
 	<div class="button">
 		{% for technique in constant('App\\Entity\\Technique::TECHNIQUES') %}
-			<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: technique }) }}">{{ technique|capitalize }}</button><a/>
+			<a button type="button" class="btn btn-secondary" href="{{ path('app_work_index', {techniqueName: technique }) }}">{{ technique|capitalize }}</button><a/>
 		{% endfor %}
 	</div>
 

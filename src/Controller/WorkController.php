@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class WorkController extends AbstractController
 {
-    #[Route('/work/{techniqueName?}', name: 'technique_show', methods: ['GET'])]
+    #[Route('/work/{techniqueName?}', name: 'app_work_index', methods: ['GET'])]
     public function showByTechnique(
         ?string $techniqueName,
         TechniqueRepository $techniqueRepository,
@@ -29,7 +29,7 @@ class WorkController extends AbstractController
         ]);
     }
 
-    #[Route('/work/{id}', name: 'app_work_show', methods: ['GET'])]
+    #[Route('/work/show/{id}', name: 'app_work_show', methods: ['GET'])]
     public function show(Work $work): Response
     {
         return $this->render('work/show.html.twig', [
