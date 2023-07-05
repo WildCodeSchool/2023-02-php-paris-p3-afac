@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap');
 
 $carousel-control-color: black;
-$primary:black;
 $font-family-base:'Gothic A1', sans-serif;
 $primaryTextColor: black;
 $secondaryTextColor: #8F0627;
@@ -30,10 +29,11 @@ body {
   }
 }
 
-*{box-sizing : border-box}
+*{
+box-sizing : border-box
+}
 
   .contenu_carou_auto{
-
   margin:2rem auto;
   width:420px;
   height:279px;
@@ -58,13 +58,10 @@ body {
   height:366px;
   left:10px;
   outline:1px solid transparent;
-  backface-visibility:hidden
-  }
-      
-  .caroussel-image img {
+  backface-visibility:hidden;
   transform:translate3d(0,0,495px)
   }
-      
+        
   .caroussel-image img:nth-child(2) { 
   transform:rotateY(45deg) translateZ(495px)
   }
@@ -151,12 +148,9 @@ to{transform:rotatey(0.5turn)}}
   .caroussel-image img {
     width: 200px;
     height:266px;
+    transform:translate3d(0,0,450px)
   }
-      
-  .caroussel-image img {
-  transform:translate3d(0,0,450px)
-  }
-      
+         
   .caroussel-image img:nth-child(2) {
   transform:rotateY(45deg) translateZ(450px)
   }
@@ -198,11 +192,8 @@ to{transform:rotatey(0.5turn)}}
   .caroussel-image img{
     width: 200px;
     height:266px;
+    transform:translate3d(0,0,380px)
     }
-      
-  .caroussel-image img {
-  transform:translate3d(0,0,380px)
-  }
       
   .caroussel-image img:nth-child(2) {
   transform:rotateY(45deg) translateZ(380px)
