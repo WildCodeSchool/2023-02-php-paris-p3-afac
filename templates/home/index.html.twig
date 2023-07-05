@@ -3,4 +3,34 @@
 {% block title %}AFAC 974
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+	<div class="BgPage">
+		<div class="contenu_carou_auto">
+			<div class="caroussel-image">
+				{% for work in works %}
+					<img src="{{ asset('../build/images/' ~ work.picture) }}">
+				{% endfor %}
+			</div>
+		</div>
+
+		<br><br>
+
+		<div class="TitlePage">
+			<h1>AFAC 974<span>L'association</span>
+			</h1>
+		</div>
+
+		<section>
+			<figure class="text-center">
+				<blockquote class="blockquote">
+					<section class="paragraphe">
+						<p>Bienvenue dans notre galerie d'art où les oeuvres prennent vie, les formes s'entrelacent et les émotions se révèlent</p>
+					</section>
+				</blockquote>
+				<figcaption class="blockquote-footer">
+					<cite title="Source Title">LVEJ</cite>
+				</figcaption>
+			</figure>
+		</section>
+	</div>
+{% endblock %}
