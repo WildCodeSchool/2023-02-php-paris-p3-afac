@@ -13,7 +13,7 @@ class HomeController extends AbstractController
     public function index(WorkRepository $workRepository): Response
     {
         return $this->render('home/index.html.twig', [
-            'works' => $workRepository->findBy([], null, 7)
+            'works' => $workRepository->findBy([], null, 8)
         ]);
     }
 }
