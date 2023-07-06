@@ -1,0 +1,48 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}
+{# <form name="work" enctype="multipart/form-data" method="post">
+	<div class="form-group">
+		<label for="work_name" class="required form-label mt-4"></label>
+		<input type="text" class="form-control" id="work_name" name="work[name]" required="required" maxlength="100" placeholder="Nom de l'oeuvre"/>
+	</div>
+	<div class="form-group">
+		<label for="work_publishedAt" class="required form-label mt-4"></label>
+		<input type="text" class="form-control" id="work_publishedAt" name="work[publishedAt]" required="required" maxlength="100" placeholder="Date de publication"/>
+	</div>
+	<div class="form-group">
+		<label for="work_description" class="required form-label mt-4"></label>
+		<textarea class="form-control" id="work_description" name="work[description]" required="required" placeholder="Description"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="work_reference" class="required form-label mt-4"></label>
+		<input type="text" class="form-control" id="work_reference" name="work[reference]" required="required" maxlength="255" placeholder="Référence"/>
+	</div>
+	<div class="form-group">
+		<label for="work_format" class="required form-label mt-4"></label>
+		<input type="text" class="form-control" id="work_format" name="work[format]" required="required" maxlength="255" placeholder="Format"/>
+	</div>
+	<div class="form-group">
+		<label for="work_picture" class="required form-label mt-4"></label>
+		<input type="text" class="form-control" id="work_picture" name="work[picture]" required="required" maxlength="255" placeholder="Image"/>
+	</div>
+	<div class="form-group">
+		<label for="work_technique" class="required form-label mt-4"></label>
+		<select class="form-select" id="work_technique" name="work[technique]" required="required">
+			<option value="">--Choisissez votre technique--</option>
+			<option value="1">Dessin</option>
+			<option value="2">Aquarelle</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="work_artist" class="required form-label mt-4"></label>
+		<select class="form-select" id="work_artist" name="work[artist]" required="required">
+			<option value="">--Choisissez votre auteur--</option>
+			<option value="1">Mortier de Trévise</option>
+		</select>
+	</div>
+
+	{{ form_errors(form) }}
+	<button type="submit" class="btn btn-primary">Enregistrer</button>
+</form> #}
