@@ -14,31 +14,25 @@
 	<div class="first">
 		<div class="square2">
 			<figure>
-				<img
-				src="/build/images/{{ work.picture }}" class="img-thumbnail grayscale picture">
-			{# <img src="{{ vich_uploader_asset(work) }}" alt="{{ work.name }} class="img-thumbnail grayscale work-pictures"> #}
-			</figure>
+				<img src="{{ asset('../build/images/' ~ work.picture) }}" class="img-thumbnail grayscale picture">
+			</div>
+		</div>
+		<div class="second">
+			<div class="detail">
+				<h2>{{ work.name }}</h2>
+				<p>Date de réalisation -
+					{{ work.publishedAt }}
+				</p>
+				<p>Référence -
+					{{ work.reference }}
+				</p>
+				<p>Format -
+					{{ work.format }}
+				</p>
+			</div>
 		</div>
 	</div>
-	<div class="second">
-		<div class="detail">
-			<h2>{{ work.name }}</h2>
-			<p>Date de réalisation -
-				{{ work.publishedAt }}
-			</p>
-			<p>Référence -
-				{{ work.reference }}
-			</p>
-			<p>Format -
-				{{ work.format }}
-			</p>
-		</div>
+	<div class="description">
+		<p>{{ work.description }}</p>
 	</div>
-</div>
-<div class="description">
-	<p>{{ work.description }}</p>
-</div>
-
-{# <a href="{{ path('app_work_edit', {'id': work.id}) }}">edit</a> #}
-
-{# {{ include('work/_delete_form.html.twig') }} #}{% endblock %}
+{% endblock %}
