@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une oeuvre
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+	<h1>Modifier une oeuvre</h1>
+
+	{{ include('work/_form.html.twig', {'button_label': 'Update'}) }}
+
+	<a href="{{ path('app_work_index') }}">Retour à la galerie</a>
+
+	{{ include('work/_delete_form.html.twig') }}
+{% endblock %}
