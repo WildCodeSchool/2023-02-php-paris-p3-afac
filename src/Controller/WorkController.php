@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/work')]
 class WorkController extends AbstractController
 {
-    #[Route('/work/{techniqueName?}', name: 'technique_show', methods: ['GET'])]
+    #[Route('/work/technique/{techniqueName?}', name: 'app_work_index', methods: ['GET'])]
     public function showByTechnique(
         ?string $techniqueName,
         TechniqueRepository $techniqueRepository,

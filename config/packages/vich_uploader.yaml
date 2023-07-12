@@ -1,4 +1,3 @@
-# config/packages/vich_uploader.yaml
 vich_uploader:
     db_driver: orm
 
@@ -7,7 +6,6 @@ vich_uploader:
 
     mappings:
         picture_file:
-            # alias qui nous permet d'accéder à nos images depuis le navigateur
             uri_prefix: /uploads/images/pictures
-            upload_destination: '%upload_directory%'
+            upload_destination: "%upload_directory%"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

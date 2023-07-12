@@ -162,7 +162,7 @@ class Work
         return $this->pictureFile;
     }
 
-    public function setPictureFile(?File $pictureFile)
+    public function setPictureFile(?File $pictureFile): self
     {
         $this->pictureFile = $pictureFile;
         if ($pictureFile) {
@@ -171,12 +171,12 @@ class Work
         return $this;
     }
 
-    public function getUpdatedAt()
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt(DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
