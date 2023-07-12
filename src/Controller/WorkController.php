@@ -5,14 +5,33 @@ namespace App\Controller;
 use App\Entity\Work;
 use App\Form\WorkType;
 use App\Repository\WorkRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\TechniqueRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/work')]
 class WorkController extends AbstractController
 {
+    #[Route('/work/{techniqueName?}', name: 'technique_show', methods: ['GET'])]
+    public function showByTechnique(
+        ?string $techniqueName,
+        TechniqueRepository $techniqueRepository,
+        WorkRepository $workRepository
+    ): Response {
+        if (empty($techniqueName)) {
+            $works = $workRepository->findAll();
+        } else {
+            $technique = $techniqueRepository->findOneByName($techniqueName);
+            $works = $workRepository->findByTechnique($technique);
+        }
+
+        return $this->render('work/index.html.twig', [
+            'works' => $works
+        ]);
+    }
+
     #[Route('/', name: 'app_work_index', methods: ['GET'])]
     public function index(WorkRepository $workRepository): Response
     {
