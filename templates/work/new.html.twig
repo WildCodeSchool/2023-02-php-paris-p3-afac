@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une oeuvre
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+	<h3>Ajouter une nouvelle oeuvre</h3>
+
+	{{ include('work/_form.html.twig') }}
+
+	<a href="{{ path('app_work_index') }}">Retour à la liste</a>
+{% endblock %}
