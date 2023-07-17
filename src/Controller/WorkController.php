@@ -31,7 +31,7 @@ class WorkController extends AbstractController
             'works' => $works
         ]);
     }
-    
+
     #[Route('/new', name: 'app_work_new', methods: ['GET', 'POST'])]
     public function new(Request $request, WorkRepository $workRepository): Response
     {
