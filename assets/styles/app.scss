@@ -7,18 +7,29 @@
 $carousel-control-color: black;
 $font-family-base:'Gothic A1', sans-serif;
 $primaryTextColor: black;
-$secondaryTextColor: #8F0627;
+$secondaryTextColor: #c96f6f;
+
+.btn {
+  background-color: $secondaryTextColor;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #fff;
+  color: $secondaryTextColor;
+  border-color: $secondaryTextColor;
+}
 
 //  Home Page Start //
 body {
   background: url('../images/landscape.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  overflow: hidden;
+  flex-direction: column;
 
   .BgPage {
   width: 100%;
@@ -39,7 +50,7 @@ box-sizing : border-box
   height:279px;
   perspective:8000px
   }
-		
+	
   .caroussel-image {
   animation:rotation 24s infinite alternate linear;	
   transform-style:preserve-3d;
@@ -51,7 +62,7 @@ box-sizing : border-box
   top:0;
   left: 0;
   }
-      
+  
   .caroussel-image img { 
   filter:drop-shadow(0 12px 5px hsla(0,0%,0%,.4));
   width: 300px;
@@ -63,7 +74,7 @@ box-sizing : border-box
   }
         
   .caroussel-image img:nth-child(2) { 
-  transform:rotateY(45deg) translateZ(495px)
+    transform:rotateY(45deg) translateZ(495px)
   }
       
   .caroussel-image img:nth-child(3) {
@@ -150,9 +161,9 @@ to{transform:rotatey(0.5turn)}}
     height:266px;
     transform:translate3d(0,0,450px)
   }
-         
+
   .caroussel-image img:nth-child(2) {
-  transform:rotateY(45deg) translateZ(450px)
+    transform:rotateY(45deg) translateZ(450px)
   }
       
   .caroussel-image img:nth-child(3) {
@@ -196,15 +207,15 @@ to{transform:rotatey(0.5turn)}}
     }
       
   .caroussel-image img:nth-child(2) {
-  transform:rotateY(45deg) translateZ(380px)
+    transform:rotateY(45deg) translateZ(380px)
   }
       
   .caroussel-image img:nth-child(3) {
-  transform:rotateY(90deg) translateZ(380px)
+    transform:rotateY(90deg) translateZ(380px)
   }
     
   .caroussel-image img:nth-child(4) {
-  transform:rotateY(135deg) translateZ(380px)
+    transform:rotateY(135deg) translateZ(380px)
   }
     
   .caroussel-image img:nth-child(5) {
@@ -224,8 +235,6 @@ to{transform:rotatey(0.5turn)}}
   }
 }
 
-$primaryTextColor: black;
-
 * {
     font-family: 'Gothic A1', sans-serif;
     color: $primaryTextColor;
@@ -237,10 +246,10 @@ h5 {
 }
 
 // Navbar //
-   
-    .nav-link {
-        color: $primaryTextColor;
-        font-size: 16px;
+
+.nav-link {
+    color: $primaryTextColor;
+    font-size: 16px;
     }
 
 .nav-link {
@@ -356,7 +365,6 @@ h5 {
         align-items: center;
         margin-top: none;
         font-size: 10px;
-        // border: 2px solid black;
     }
 
     .hexagon {
@@ -397,8 +405,8 @@ h5 {
 }
 
 .square {
-    max-width: 500px;
-    height: 600px;
+    max-width: 400px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -419,14 +427,14 @@ figcaption {
 @media screen and (max-width: 767px) {
 
     .square {
-        max-width: 450px;
+        max-width: 400px;
         height: 500px;
         text-align: center;
     }
 
     .work-pictures {
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 250px;
+        max-height: 250px;
     }
 }
 
@@ -434,7 +442,7 @@ figcaption {
 
     .square {
         width: 300px;
-        height: 350px;
+        height: 450px;
         text-align: center;
     }
 
@@ -450,7 +458,6 @@ figcaption {
 }
 
 // Page d'une oeuvre //
-
 .work {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -470,13 +477,13 @@ figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 700px;
-    max-height: 700px;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 .picture {
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 .detail, .description {
@@ -486,19 +493,41 @@ figcaption {
     font-size: 24px;
 }
 
+.container2 {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.zoom:hover {
+  transition: transform .5s;
+  margin: 0 auto;
+  padding: 5%;
+  transform: scale(1.4);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.zoom2:hover {
+  transition: transform .5s;
+  margin: 0 auto;
+  padding: 5%;
+  transform: scale(2.2);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 @media screen and (max-width: 767px) {
+
     .work {
         display:flex;
         flex-direction: column;
     }
     .square2 {
-        max-width: 600px;
-        max-height: 600px;
+        max-width: 300px;
+        max-height: 300px;
     }
 
     .picture {
-        max-width: 550px;
-        max-height: 550px;
+        max-width: 250px;
+        max-height: 250px;
     }
 
     .second {
@@ -513,6 +542,7 @@ figcaption {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+
     .square2 {
         max-width: 500px;
         max-height: 500px;
