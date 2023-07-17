@@ -33,7 +33,6 @@ class UserFixtures extends Fixture
         $contributor->setPassword($hashedPassword);
         $manager->persist($contributor);
 
-
         $admin = new User();
         $admin->setEmail('admin@monsite.com');
         $hashedPassword = $this->passwordHasher->hashPassword(
@@ -46,45 +45,6 @@ class UserFixtures extends Fixture
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setPassword($hashedPassword);
         $manager->persist($admin);
-
-
-        // Création d’un utilisateur de type “administrateur”
-        // $admin = new User();
-        // $admin->setEmail('admin@monsite.com');
-        // $admin->setRoles(['ROLE_ADMIN']);
-        // $hashedPassword = $this->passwordHasher->hashPassword(
-        //     $admin,
-        //     'adminpassword'
-        // );
-        // $admin->setPassword($hashedPassword);
-        // $manager->persist($admin);
-
-        // Sauvegarde des 2 nouveaux utilisateurs :
         $manager->flush();
     }
 }
-    // public const USER =
-    // [
-    //     [
-    //         'email' => 'info@afac.com',
-    //         'password' => '1234',
-    //         'firstname' => 'Loïc',
-    //         'lastname' => 'Lozok',
-    //         'identifiant' => 'aaaaa',
-    //         'role' => 'ROLE_USER'
-    //     ],
-
-    // ];
-    // public function load(ObjectManager $manager): void
-    // {
-        // foreach (self::USER as $userName => $value) {
-        //     $user = new User();
-        //     $user->setEmail('email']);
-        //     $user->setPassword('password']);
-        //     $user->setFirstname('firstname']);
-        //     $user->setLastname('lastname']);
-        //     $user->setIdentifiant('identifiant']);
-        //     $user->setRoles('role']);
-        //     $manager->persist($user);
-        // }
-        // $manager->flush();

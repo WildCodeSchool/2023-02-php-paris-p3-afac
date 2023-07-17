@@ -21,7 +21,7 @@ class RegistrationController extends AbstractController
         Request $request,
         UserPasswordHasherInterface $userPasswordHasher,
         EntityManagerInterface $entityManager,
-        UserAuthenticatorInterface $userAuthenticatorInterface,
+        UserAuthenticatorInterface $userAuthInterface,
         AppAuthenticator $appAuthenticator
     ): Response {
         $user = new User();
@@ -39,7 +39,7 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $userAuthenticatorInterface->authenticateUser($user, $appAuthenticator, $request);
+            return $userAuthInterface->authenticateUser($user, $appAuthenticator, $request);
         }
 
         return $this->render('registration/register.html.twig', [
