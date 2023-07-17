@@ -1,31 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register
+{% block title %}Créer votre compte
 {% endblock %}
 
 
 {% block body %}
 	{{ include('registration/_form.html.twig', {'button_label': 'Submit'}) }}
 {% endblock %}
-
-{# <form>
-			<div class="login-box">
-				<h2>Login</h2>
-	
-				<div class="user-box">
-					<input type="text" name="" required="">
-					<label>Username</label>
-				</div>
-				<div class="user-box">
-					<input type="password" name="" required="">
-					<label>Password</label>
-				</div>
-				<a href="#">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					Submit
-				</a>
-			</form>
-		</div> #}

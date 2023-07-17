@@ -30,7 +30,6 @@ class UserFixtures extends Fixture
         $contributor->setLastname('Pops');
         $contributor->setIdentifiant('surnom');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $contributor->setIsVerified(true);
         $contributor->setPassword($hashedPassword);
         $manager->persist($contributor);
 
@@ -45,7 +44,6 @@ class UserFixtures extends Fixture
         $admin->setLastname('Pops2');
         $admin->setIdentifiant('surnom2');
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setIsVerified(true);
         $admin->setPassword($hashedPassword);
         $manager->persist($admin);
 

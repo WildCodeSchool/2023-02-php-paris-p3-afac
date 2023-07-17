@@ -11,8 +11,13 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
-class User implements PasswordAuthenticatedUserInterface
+class User implements PasswordAuthenticatedUserInterface, UserInterface, \Serializable
 {
+    public const ROLES = [
+        '1' => 'ROLE_CONTRIBUTOR',
+        '2' => 'ROLE_ADMIN',
+    ];
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -35,9 +40,6 @@ class User implements PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private array $roles = [];
-
-    #[ORM\Column(type: 'boolean')]
-    private bool $isVerified = false;
 
     public function getId(): ?int
     {
@@ -112,9 +114,6 @@ class User implements PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        $roles[] = [
-            'ROLE_CONTRIBUTOR', 'ROLE_USER'
-        ];
 
         return array_unique($roles);
     }
@@ -126,20 +125,25 @@ class User implements PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getIsVerified(): ?bool
+    public function eraseCredentials(): void
     {
-        return $this->isVerified;
     }
 
-    public function setIsVerified(bool $isVerified): self
+    public function serialize()
     {
-        $this->isVerified = $isVerified;
-
-        return $this;
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+        ));
     }
 
-    public function isVerified(): bool
+    public function unserialize($serialized)
     {
-        return $this->isVerified;
+        list(
+            $this->id,
+            $this->email,
+            $this->password,
+        ) = unserialize($serialized, array('allowed_classes' => false));
     }
 }
