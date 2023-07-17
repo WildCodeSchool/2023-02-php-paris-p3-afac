@@ -6,14 +6,14 @@
 {% block body %}
 
 	<div>
-		<a button type="button" class="btn btn-secondary" href="{{ path('app_work_index') }}">Retour à la gallerie</button>
+		<a button type="button" class="btn btn-lg" href="{{ path('app_work_index') }}">Retour à la galerie</button>
 	</a>
 </div>
 
 <div class="work">
 	<div class="first">
 		<div class="square2">
-			<figure>
+			<figure class="zoom">
 				<img src="{{ asset('../build/images/' ~ work.picture) }}" class="img-thumbnail grayscale picture">
 			</div>
 		</div>
