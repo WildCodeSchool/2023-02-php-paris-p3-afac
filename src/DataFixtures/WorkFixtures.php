@@ -75,6 +75,17 @@ class WorkFixtures extends Fixture implements DependentFixtureInterface
             'technique' => 'aquarelle',
             'artist' => 'Hippolyte'
         ],
+        // [
+        //     'name' => 'Boutchiana- Indien',
+        //     'publishedAt' => 'juillet 1871',
+        //     'description' => 'Boutchiana est devenu le domestique personnel de Ch.Mortier de Trévise,
+        //                 et il a vieilli de 6 ans.',
+        //     'reference' => '40FI',
+        //     'format' => '',
+        //     'picture' => '',
+        //     'technique' => 'aquarelle',
+        //     'artist' => 'Hippolyte'
+        // ],
         [
             'name' => 'Boutchiana- Casernes',
             'publishedAt' => '24 août 1865',

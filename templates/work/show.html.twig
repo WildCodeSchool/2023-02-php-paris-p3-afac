@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Work
+{% endblock %}
+
+{% block body %}
+
+	<div>
+		<a button type="button" class="btn btn-lg" href="{{ path('app_work_index') }}">Retour à la galerie</button>
+	</a>
+</div>
+
+<div class="work">
+	<div class="first">
+		<div class="square2">
+			<figure class="zoom">
+				<img src="{{ asset('../build/images/' ~ work.picture) }}" class="img-thumbnail grayscale picture">
+			</div>
+		</div>
+		<div class="second">
+			<div class="detail">
+				<h2>{{ work.name }}</h2>
+				<p>Date de réalisation -
+					{{ work.publishedAt }}
+				</p>
+				<p>Référence -
+					{{ work.reference }}
+				</p>
+				<p>Format -
+					{{ work.format }}
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="description">
+		<p>{{ work.description }}</p>
+	</div>
+{% endblock %}

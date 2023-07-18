@@ -5,21 +5,25 @@
 
 {% block body %}
 
-	<h1>Toutes les Oeuvres</h1>
+	<h1>Les oeuvres de Hyppolyte Charles Napoléon MORTIER, Duc de Trévise</h1>
 
 	<div class="button">
 		{% for technique in constant('App\\Entity\\Technique::TECHNIQUES') %}
-			<a button type="button" class="btn btn-secondary" href="{{ path('technique_show', {techniqueName: technique }) }}">{{ technique|capitalize }}</button><a/>
+			<a button type="button" class="btn btn-lg" href="{{ path('app_work_index', {techniqueName: technique }) }}">{{ technique|capitalize }}</button><a/>
 		{% endfor %}
 	</div>
 
+	<br>
+
 	<div class="row">
 		{% for work in works %}
-			<div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-4">
+			<div class="col-sm-6 col-md-5 col-lg-3 col-xl-3 mt-3">
 				<figure class="square">
-					<img src="../build/images/{{ work.picture }}" class="img-thumbnail grayscale work-pictures">
+					<img src="{{ asset('../build/images/' ~ work.picture) }}" class="img-thumbnail grayscale work-pictures zoom2">
 					<figcaption>{{ work.name }}</figcaption>
-					<a href="" target="blank"><img src="../build/images/eye.625866c0.png" alt="eye-icon" class="" height="30"></a>
+					<div class="eye">
+						<a href="{{ path('app_work_show', {'id': work.id}) }}" target="blank"><img src="../build/images/eye.625866c0.png" alt="eye-icon" class="" height="30"></a>
+					</div>
 				</figure>
 			</div>
 		{% endfor %}
