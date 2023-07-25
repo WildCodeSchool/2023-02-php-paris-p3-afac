@@ -31,7 +31,7 @@ class WorkRepository extends ServiceEntityRepository
         }
     }
 
-    public function findLikeName(string $name)
+    public function findLikeName(string $name): ?array
     {
         $queryBuilder = $this->createQueryBuilder('w')
             ->where('w.name LIKE :name')
