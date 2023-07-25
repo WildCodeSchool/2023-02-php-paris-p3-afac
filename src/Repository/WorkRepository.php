@@ -30,4 +30,15 @@ class WorkRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    public function findLikeName(string $name): ?array
+    {
+        $queryBuilder = $this->createQueryBuilder('w')
+            ->where('w.name LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
+            ->orderBy('w.name', 'ASC')
+            ->getQuery();
+
+        return $queryBuilder->getResult();
+    }
 }

@@ -4,32 +4,45 @@
 {% endblock %}
 
 {% block body %}
-	<div class="BgPage">
-		<div class="contenu_carou_auto">
-			<div class="caroussel-image">
-				{% for work in works %}
-					<img src="{{ asset('../build/images/' ~ work.picture) }}">
-				{% endfor %}
+	<main>
+		<div class="BgPage">
+			<div class="contenu_carou_auto">
+				<div class="caroussel-image">
+					{% for work in works %}
+						<img src="{{ asset('../build/images/' ~ work.picture) }}">
+					{% endfor %}
+				</div>
 			</div>
-		</div>
 
-		<br><br>
-
-		<div class="TitlePage">
-			<h1>AFAC 974<span>L'association</span>
-			</h1>
-		</div>
-		<section>
-			<figure class="text-center">
-				<blockquote class="blockquote">
-					<section class="paragraphe">
-						<p>Bienvenue dans notre galerie d'art où les oeuvres prennent vie, les formes s'entrelacent et les émotions se révèlent</p>
-					</section>
-				</blockquote>
-				<figcaption class="blockquote-footer">
-					<cite title="Source Title">LVEJ</cite>
-				</figcaption>
-			</figure>
-		</section>
-	</div>
-{% endblock %}
+			<div class="TitlePage">
+				{% for message in app.flashes('notice') %}
+					<div class="flash-notice">
+						{{ message }}
+					</div>
+				{% endfor %}
+				<h1>AFAC 974<span>L'association</span>
+				</h1>
+			</div>
+			<section>
+				<figure class="text-center">
+					<blockquote class="blockquote">
+						<section class="paragraphe">
+							<p>Bienvenue dans notre galerie d'art où les oeuvres prennent vie, les formes s'entrelacent et les émotions se révèlent !</p>
+							<p>L'Île de la Réunion a été repérée il y a plus de 800 ans par les Arabes.</p>
+							<p>Puis elle fut colonisée par les Portugais, les Anglais, les Hollandais et les Français.</p>
+							<p>Elle changera de nom 11 fois !</p>
+							<p>Mais ce n'est qu'au milieu du XVIIe siècle que les colons s'y installèrent réellement en emmenant des esclaves malgaches, africains, indiens pour cultiver les terres et les asservir.</p>
+							<p>Ces derniers ont apporté leur histoire, leur culture, leur gastronomie et leur dialecte.</p>
+							<p>L'AFAC 974 vous fait découvrir l'histoire de cette petite île située dans l'archipel des Mascareignes à travers les œuvres du Duc de Trévise,<a class="bio" target="_blank" href="https://forgetmenot.objettemoin.org/index.php/fr/actus/35-hippolyte-charles-napoleon-mortier-duc-de-trevise">Hippolyte Charles Napoléon MORTIER de TREVISE.</a>
+							</p>
+							<p>
+								<h3>
+									<em>Découvrez l'île aux mille couleurs !</em>
+								</h3>
+							</p>
+						</section>
+					</figure>
+				</section>
+			</div>
+		</main>
+	{% endblock %}

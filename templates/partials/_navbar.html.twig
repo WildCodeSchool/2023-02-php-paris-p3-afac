@@ -12,17 +12,11 @@
 					<a class="nav-link" href="{{ path('app_work_index') }}">GALERIE</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path('app_about') }}">A PROPOS</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/contact">CONTACT</a>
+					<a class="nav-link" href="{{ path('app_about') }}">L'ASSOCIATION</a>
 				</li>
 			</ul>
-			<form class="d-flex">
-				<input class="form-control me-sm-2" type="search" placeholder="Rechercher">
-				<button class="btn btn-secondary my-2 my-sm-0" type="submit"><img src="../build/images/icon_search.cc0a4eac.png" class="nav-link" width="40"></button>
-			</form>
-			<a class="login_logo" href="">
+			{{ include('partials/form/_search.html.twig') }}
+			<a class="login_logo" href="{{ path('app_login') }}">
 				<img src="../build/images/utilisateur.e5d9ea28.png" class="nav-link" width="40">
 			</a>
 		</div>
