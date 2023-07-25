@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Work;
 use App\Form\WorkType;
+use App\Form\SearchWorkType;
 use App\Repository\WorkRepository;
 use App\Repository\TechniqueRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,6 +33,28 @@ class WorkController extends AbstractController
         ]);
     }
 
+    #[Route('/search', name: 'app_work_search', methods: ['GET', 'POST'])]
+
+    public function search(Request $request, WorkRepository $workRepository): Response
+    {
+        $form = $this->createForm(SearchWorkType::class);
+        $form->handleRequest($request);
+
+        $search = $request->query->get('search');
+
+        if (empty($search)) {
+            $works = $workRepository->findAll();
+        } else {
+            $works = $workRepository->findLikeName($search);
+        }
+
+        return $this->render('work/search.html.twig', [
+            'works' => $works
+        ]);
+    }
+
+
+
     #[Route('/new', name: 'app_work_new', methods: ['GET', 'POST'])]
     public function new(Request $request, WorkRepository $workRepository): Response
     {
@@ -41,6 +64,8 @@ class WorkController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $workRepository->save($work, true);
+
+            $this->addFlash('success', 'Bravo! La nouvelle oeuvre a bien été créée !');
 
             return $this->redirectToRoute('app_work_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -68,6 +93,8 @@ class WorkController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $workRepository->save($work, true);
 
+            $this->addFlash('success', 'Bravo! La nouvelle oeuvre a bien été modifiée !');
+
             return $this->redirectToRoute('app_work_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -82,6 +109,8 @@ class WorkController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $work->getId(), $request->request->get('_token'))) {
             $workRepository->remove($work, true);
+
+            $this->addFlash('success', 'Bravo! La nouvelle oeuvre a bien été supprimée !');
         }
 
         return $this->redirectToRoute('app_work_index', [], Response::HTTP_SEE_OTHER);

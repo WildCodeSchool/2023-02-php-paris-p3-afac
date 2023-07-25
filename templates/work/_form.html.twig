@@ -1,4 +1,32 @@
 {{ form_start(form) }}
-{{ form_widget(form) }}
-<button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_row(form.name, {
+            label: 'Nom de l\'oeuvre'
+        }) }}
+{{ form_row(form.publishedAt, {
+            label: 'Date de publication'
+        }) }}
+{{ form_row(form.description, {
+            label: 'Description'
+        }) }}
+{{ form_row(form.reference, {
+            label: 'Référence'
+        }) }}
+{{ form_row(form.format, {
+            label: 'Format (en cm)'
+        }) }}
+{{ form_row(form.pictureFile, {
+            label: 'Image'
+        }) }}
+<label for="technique">Technique</label>
+<select class="form-control" name="{{ field_name(form.technique) }}">
+    <option value="">--Choisissez une technique--</option>
+
+    {% for label, value in field_choices(form.technique) %}
+        <option value="{{ value }}">{{ label }}</option>
+    {% endfor %}
+</select>
+{{ form_row(form.artist, {
+            label: 'Artiste'
+        }) }}
+<button class="btn btn-lg">{{ button_label|default('Sauvegarder') }}</button>
 {{ form_end(form) }}
