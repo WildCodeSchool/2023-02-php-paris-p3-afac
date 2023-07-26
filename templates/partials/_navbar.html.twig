@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md" data-bs-theme="light">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ path('app_home') }}">
-			<img src="../build/images/AFAC974-CG23Offshore_250x99.89a4b1e6.png" alt="logo" class="nav-link" width="100">
+			<img src="{{ asset('build/images/AFAC974-CG23Offshore_250x99.89a4b1e6.png') }}" alt="logo" class="nav-link" width="100">
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
 			</ul>
 			{{ include('partials/form/_search.html.twig') }}
 			<a class="login_logo" href="{{ path('app_login') }}">
-				<img src="../build/images/utilisateur.e5d9ea28.png" class="nav-link" width="40">
+				<img src="{{ asset('build/images/utilisateur.e5d9ea28.png') }}" alt="logo" class="nav-link" width="40">
 			</a>
 		</div>
 	</div>
