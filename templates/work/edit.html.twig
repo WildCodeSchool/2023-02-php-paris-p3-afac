@@ -6,13 +6,13 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-	<h2>Modifier une oeuvre</h2>
+	<h3>Modifier une oeuvre</h3>
 
 	<div class="form">
 		{{ include('work/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 	</div>
 
 	<div>
-		<a button type="button" class="btn btn-lg" href="{{ path('app_work_index') }}">Retour à la galerie</button>
-	</a>
-</div>{% endblock %}
+		<a type="button" class="btn btn-secondary" href="{{ path('app_work_index') }}">Retour à la galerie</a>
+	</div>
+{% endblock %}

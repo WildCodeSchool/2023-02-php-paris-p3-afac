@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Work
+{% block title %}Galerie
 {% endblock %}
 
 {% block body %}
 	<main>
 		<h3>Les oeuvres de Hippolyte Charles Napoléon MORTIER, Duc de Trévise</h3>
 
-		<p>Nombre de résultats :
+		<div class="buttoncenter">
+			<a type="button" class="btn btn-secondary" href="{{ path('app_work_index') }}">Retour à la galerie</a>
+		</div>
+
+		<p class="description2">Nombre de résultats :
 
 			{% set count = 0 %}
 			{% for work in works %}
@@ -29,7 +33,6 @@
 			{% endfor %}
 		</div>
 
-		<p>Images non libres de droit</p>
-
+		<p class="description2">Images non libres de droit</p>
 	</main>
 {% endblock body %}

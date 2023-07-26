@@ -8,11 +8,11 @@
 	<h2>Connexion</h2>
 	{% if app.user %}
 		<div class="mb-3">
-			<p>Vous êtes connecté(e) en tant que
+			<p class="description2">Vous êtes connecté(e) en tant que
 				{{ app.user.userIdentifier }}.
 			</p>
-			<div class="btn">
-				<a id="colorchange" href="{{ path('app_logout') }}">Se déconnecter</a>
+			<div class="buttoncenter">
+				<a class="btn" id="colorchange" href="{{ path('app_logout') }}">Se déconnecter</a>
 			</div>
 
 		{% else %}
@@ -39,8 +39,7 @@
 			</div>
 			{# </main> #}
 		{% endif %}
-
-		<div>
+		<div class="description2" id="RGPD">
 			<p>Le site s'engage à ne pas utiliser les données personnelles en accord avec la politique de la<a class="bio" target="_blank" href="https://www.cnil.fr/fr">RGPD.</a>
 			</p>
 		</div>
