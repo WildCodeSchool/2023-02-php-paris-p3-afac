@@ -8,7 +8,7 @@
 			{% block title %}Projet 3 Name
 			{% endblock %}
 		</title>
-		{# <link rel="icon" href="../build/images/favicon.423d1a18.png"> #}
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -18,9 +18,6 @@
 
 	</head>
 
-	{# {% block header %}
-								{% include 'partials/_navbar.html.twig' %}
-							{% endblock %} #}
 	{% block nav %}
 		{{ render(controller('App\\Controller\\NavbarController::index')) }}
 	{% endblock %}

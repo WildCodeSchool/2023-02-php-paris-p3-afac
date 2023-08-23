@@ -8,9 +8,10 @@ use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'Il existe un compte avec cette adresse mail')]
 class User implements PasswordAuthenticatedUserInterface, UserInterface, \Serializable
 {
     public const ROLES = [
@@ -24,6 +25,9 @@ class User implements PasswordAuthenticatedUserInterface, UserInterface, \Serial
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\Email(
+        message: 'Le mail renseigné {{ value }} n\'est pas valide.',
+    )]
     private ?string $email = null;
 
     #[ORM\Column]

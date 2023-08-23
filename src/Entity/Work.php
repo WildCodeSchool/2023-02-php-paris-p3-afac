@@ -39,6 +39,7 @@ class Work
     private ?string $picture = null;
 
     #[Vich\UploadableField(mapping: 'picture_file', fileNameProperty: 'picture')]
+    #[Assert\NotBlank()]
     #[Assert\File(
         maxSize: '2M',
         mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/jpg'],

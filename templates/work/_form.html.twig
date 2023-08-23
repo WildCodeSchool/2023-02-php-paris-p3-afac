@@ -18,15 +18,20 @@
             label: 'Image'
         }) }}
 <label for="technique" id="tech">Technique</label>
-<select class="form-control" name="{{ field_name(form.technique) }}">
+<select class="form-control" name="{{ field_name(form.technique) }}" required>
     <option value="">--Choisissez une technique--</option>
 
     {% for label, value in field_choices(form.technique) %}
         <option value="{{ value }}">{{ label }}</option>
     {% endfor %}
 </select>
-{{ form_row(form.artist, {
-            label: 'Artiste'
-        }) }}
+<label for="artist" id="artist">Artiste</label>
+<select class="form-control" name="{{ field_name(form.artist) }}" required>
+    <option value="">--Choisissez un artiste--</option>
+
+    {% for label, value in field_choices(form.artist) %}
+        <option value="{{ value }}">{{ label }}</option>
+    {% endfor %}
+</select>
 <button class="btn btn-lg">{{ button_label|default('Sauvegarder') }}</button>
 {{ form_end(form) }}

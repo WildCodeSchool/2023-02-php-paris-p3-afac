@@ -11,6 +11,14 @@
 					{% for work in works %}
 						<img src="{{ asset('../build/images/' ~ work.picture) }}">
 					{% endfor %}
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+					<script type="text/javascript">
+						$(document).ready(function () {
+$("body").on("contextmenu", function (e) {
+return false;
+});
+});
+					</script>
 				</div>
 			</div>
 

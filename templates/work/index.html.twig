@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="buttoncenter">
-			<a type="button" class="btn btn-lg" href="{{ path('app_work_new') }}">Créer une oeuvre</a>
+			<a type="button" class="btn btn-lg" href="{{ path('app_work_new') }}">Ajouter une oeuvre</a>
 		</div>
 
 		<div class="row">
@@ -22,6 +22,14 @@
 				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-3 mt-3">
 					<figure class="square">
 						<a href="{{ path('app_work_show', {'id': work.id}) }}"><img src="{{ vich_uploader_asset(work) }}" class="img-thumbnail grayscale work-pictures zoom2"></a>
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+						<script type="text/javascript">
+							$(document).ready(function () {
+$("body").on("contextmenu", function (e) {
+return false;
+});
+});
+						</script>
 						<figcaption>{{ work.name }}</figcaption>
 					</figure>
 				</div>

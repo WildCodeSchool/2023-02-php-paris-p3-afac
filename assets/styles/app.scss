@@ -469,6 +469,11 @@ main {
     margin: 10px;
 }
 
+#property {
+    font-size: 12px;
+    text-align: justify;
+}
+
 @media screen and (max-width:768px) {
     .login_logo {
         display: flex;
